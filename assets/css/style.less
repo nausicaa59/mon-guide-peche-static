@@ -1,0 +1,813 @@
+@html-background:white;
+@fiche-head-background:#3277b3;
+
+html, body
+{
+	background-color:@html-background;
+	width:100%;
+}
+
+body.popup-open {
+    overflow: hidden;
+    height: 100%;
+}
+
+*
+{
+	font-size: 18px;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.btn
+{
+	font-weight: bold;
+}
+
+h1
+{
+	font-size: 30px;
+	font-weight: bold;
+}
+
+h2
+{
+	font-size: 22px;
+	padding-bottom: 10px;
+	margin-bottom: 25px;
+	color:#264760;
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width:100%;
+	text-align: center;
+	font-weight: bold;
+
+	&:after
+	{
+		position: absolute;
+		display: block;
+		position: absolute;
+		width: 100px;
+		height: 2px;
+		background-color: black;
+		content:"";
+		bottom:0px;
+		left:0px;
+		right:0px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.boxShadow
+{
+	-webkit-box-shadow: 10px 10px 5px -9px rgba(71,71,71,1);
+	-moz-box-shadow: 10px 10px 5px -9px rgba(71,71,71,1);
+	box-shadow: 10px 10px 5px -9px rgba(71,71,71,1);
+}
+
+.seaBackGround
+{
+	background-color: @fiche-head-background;
+	position:relative;
+
+	&:before
+	{
+		position:absolute;
+		width: 100%;
+		height: 100%;
+		background-color: transparent;
+		display: block;
+		content: "";
+		top:0px;
+		left:0px;
+		background: url("http://www.planeteco.fr/wp-content/uploads/2018/06/texture-d-eau-de-la-mer.jpg") no-repeat center; 
+		-webkit-background-size: cover; /* pour anciens Chrome et Safari */
+		background-size: cover; /* version standardisée */
+		opacity: 0.17;
+	}
+}
+
+#mobile-menu
+{
+	.nav-bar
+	{
+		width: 100%;
+		padding:18px 15px;
+		min-height: 69px;
+
+		&.close-choice
+		{
+			background-color: #1e99e0;
+			color:white;
+			text-align: center;
+			font-weight: bold;
+			cursor: pointer;
+
+			.close-action
+			{
+				font-size: 20px;
+			}
+		}
+
+		&.choice
+		{
+			background-color: white;
+			color:#264760;
+
+			.left
+			{
+				text-align: left;
+				cursor: pointer;
+
+				i
+				{
+					font-size: 25px;
+				}
+			}	
+
+			.center
+			{
+				text-align: center;
+
+
+				img
+				{
+					height:30px;
+				}
+			}
+
+			.right
+			{
+				text-align: right;
+				cursor: pointer;
+
+				i
+				{
+					font-size: 30px;
+				}
+			}
+		}
+	}
+
+
+	.app-layout
+	{
+		position: fixed;
+		z-index: 450;
+		width: 100%;
+		height: 100%;
+		top:0px;
+		left: 0px;
+		background-color: white;
+		height: 100%;
+		overflow-y: scroll;
+		text-align: left;
+		margin-top: 69px;
+
+		.content-menu
+		{
+			padding-top: 20px;
+
+			ul
+			{
+				list-style: none;
+				padding: 0px;
+				margin: 0px;
+
+				li
+				{
+					padding: 20px 0px;
+					border-bottom:1px dashed #ced4da;
+
+					a
+					{
+						color: #264760;
+						font-weight: bold;
+					}
+				}
+			}
+		}
+		
+		.content-search
+		{
+			padding-top: 35px;
+			padding-bottom: 15px;
+			min-height: 100%;
+			
+
+			.search-section
+			{
+				padding:20px;
+				background-color: #f5f5f5;
+				margin-bottom: 30px;
+
+				.form-group
+				{
+					position:relative;
+
+					label
+					{
+						font-weight: bold;
+					}
+
+					&:hover
+					{
+						.search-render
+						{
+							display: block;
+						}
+					}
+
+					.search-render
+					{
+						height:0px;						
+						width: 100%;
+						opacity: 1;
+						display: none;
+
+						ul
+						{
+							background-color: white;
+							padding:0;
+							margin: 0px;
+							list-style: none;							
+							margin-top: -2px;
+
+							li
+							{
+								&:first-child
+								{
+									border-top:1px solid #ced4da;
+								}
+
+								a
+								{
+									display: block;
+									padding: 10px 13px;
+									border:1px dashed #f1f1f1;
+									cursor: pointer;
+									color:#303030;
+									text-decoration: none;
+									border-bottom:1px solid #ced4da;
+									border-left:1px solid #ced4da;
+									border-right:1px solid #ced4da;
+
+									&.isDepartement
+									{
+										font-weight: bold;
+									}
+
+
+									&:hover
+									{
+										background-color: #f1f1f1;
+										border-left:2px solid #1e99e0;
+									}	
+								}						
+							}
+						}
+					}
+				}
+			}			
+		}
+
+	}
+
+	&[v-cloak]
+	{
+		display: none
+	}
+
+	.close
+	{
+
+	}	
+}
+
+
+footer
+{
+	background-color: #f5f5f5;
+
+	.container
+	{
+		padding-top: 80px;
+		padding-bottom: 80px;
+
+		ul
+		{
+			list-style: none;
+			padding:0px;
+			margin:0px;
+
+			li
+			{
+				padding:10px 0px;
+				border-bottom: 1px dashed #d1d1d1;
+
+				&:first-child
+				{
+					padding-top:0px;
+				}
+
+				a
+				{
+					color:#6c757d;
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+}
+
+.pageListe
+{
+	padding-top: 40px;
+	padding-bottom: 80px;
+	background-color: #f1f1f1;
+
+	h1
+	{
+		width: 100%;
+		text-align: center;
+		padding-top: 60px;
+		padding-bottom: 40px;
+	}
+
+	.liste-item
+	{
+		position:relative;		
+		margin-bottom: 30px;
+
+		.item
+		{
+			.item-head
+			{				
+				padding:10px 10px;
+				background-color:#1e99e0;
+
+				.type
+				{
+					text-align: center;
+					font-weight: bold
+				}
+			}
+
+			.avatar
+			{
+				padding: 0px;				
+				cursor: pointer;
+
+				a
+				{
+					display: block;
+					position: relative;
+
+					&:hover:after
+					{
+						display:block;
+						content:"";
+						width: 100%;
+						height: 100%;
+						position: absolute;
+						top:0px;
+						left: 0px;
+						background-color: black;
+						opacity: 0.2
+					}
+				}
+
+
+				img
+				{
+					width: 100%;		
+				}
+			}
+
+			.guide
+			{
+				padding:4px; 
+				text-align: center;
+				color:white;
+				font-weight: bold;
+
+				&.mer
+				{
+					background-color: #047dc5;
+				}				
+			}
+
+			.infos
+			{
+				background-color: white;
+				padding:10px 10px;			
+
+				.name
+				{
+					font-size: 28px;
+					font-weight: bold;
+					color:black;
+					text-align: center;
+				}
+
+				.subtitle
+				{
+					font-size: 20px;
+					color:#484848;
+					text-align: center;
+				}
+
+				.wordkey
+				{
+					text-align: center;
+					font-size: 14px;
+				}
+			}
+
+			.callToAction
+			{
+				background-color: white;
+				padding:25px 15px;
+				text-align: center;
+
+				.btn-info
+				{
+					background-color: white;
+					border: 1px solid #047dc5;
+					color: #047dc5;
+
+					&:hover
+					{
+						background-color: #047dc5;
+						color: white;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.fiche
+{
+	.container.fiche-head
+	{
+		max-width:100%;		
+		margin:0px;
+		color:white;
+		position: relative;
+		padding-top:40px;
+		padding-bottom: 40px;
+
+		.avatar
+		{
+			text-align: center;
+
+			img
+			{
+				width: 200px;
+				height: 200px;
+				border-radius: 400px;
+				border:2px solid white;			
+			}
+		}
+
+		.infos
+		{
+			text-align: center;
+			padding-top: 10px;
+
+			h1
+			{
+				padding-bottom: 0px;
+				margin-bottom: 0px;
+			}
+
+			.subtitle
+			{
+				font-size: 22px;
+			}
+		}
+	}
+
+	.container.fiche-calltoaction
+	{
+		background-color: #264760;
+		text-align: center;	
+		max-width: 100%;
+		padding-top:25px;
+		padding-bottom: 25px;
+
+		.left
+		{
+			text-align: right;
+		}
+
+		.right
+		{
+			text-align: left;
+		}
+
+		.btn
+		{
+			width: 100%;
+			max-width: 200px;
+		}	
+	}
+
+	.fiche-infos
+	{
+		padding-top: 80px;
+		padding-bottom: 80px;
+		background-color: #f5f5f5;
+
+		.container
+		{
+			.fiche-infos-prestations
+			{
+				.liste-prestations
+				{
+					list-style: none;
+					padding: 0px;
+					margin: 0px;
+
+					.label
+					{
+						display: block;
+						font-style: italic;
+						font-weight: bold;
+					}
+
+					.value
+					{
+						display: block;
+						padding-bottom: 15px;
+
+						.badge
+						{
+							font-size: 17px;
+						}					
+					}
+				}
+			}
+
+			.fiche-infos-complementaire
+			{
+				padding-bottom: 0px;
+
+				.liste-complementaire
+				{
+					list-style: none;
+					padding:0px;
+					margin:0px;
+
+					li
+					{
+						position:relative;
+						padding-left: 60px;
+						display: block;
+						min-height: 60px;
+						padding-top: 15px;
+						padding-bottom: 15px;
+						border-bottom:1px dashed #d1d1d1;
+
+						.logo
+						{
+							position:absolute;
+							top:12px;
+							left:0px;
+
+							img
+							{
+								width:40px;
+								height:40px;
+							}
+						}
+
+						.value
+						{
+							font-style: italic;
+						}
+
+						&:last-child
+						{
+							padding-bottom: 0px;
+						}				
+					}
+				}
+			}
+		}
+	}
+
+	.fiche-qui-je-suis
+	{
+		padding-top: 80px;
+		padding-bottom: 80px;
+
+		.container
+		{
+			.visuel
+			{
+				img
+				{
+					width: 100%;
+				}
+			}
+
+			.descr
+			{
+				p
+				{
+					font-size: 18px;
+				}				
+
+				p:first-child
+				{
+					padding-top:0px;
+					margin-top: 0px;
+				}
+
+				.blockquote
+				{
+					font-size: 28px;
+					border-left:4px solid #1e99e0;
+					padding-left: 15px;
+					margin-top: 35px;
+					margin-bottom: 35px;
+					color:#1d1d1d;
+					font-weight: bold;
+
+					&:before
+					{
+						content:"“";
+					}
+
+					&:after
+					{
+						content: "”";
+					}
+				}
+			}
+		}
+	}
+
+	.galerie
+	{
+		background-color: #264760;
+
+		h2
+		{
+			color:white;
+
+			&:after
+			{
+				background-color: white;
+			}
+		}
+
+		.container
+		{
+			padding-top: 80px;
+			padding-bottom: 80px;
+		}
+
+		.galerie-video
+		{
+			height: 412px;
+		}
+
+		.galerie-img
+		{
+			div.row
+			{
+				img
+				{
+					width: 100%;
+					padding-bottom: 30px;
+				}
+
+				&:last-of-type
+				{
+					img
+					{
+						padding-bottom: 0px;
+					}					
+				}				
+			}
+		}
+	}
+}
+
+@media (min-width: 993px) and (max-width: 1140px){
+	.fiche
+	{
+		.galerie
+		{
+			.galerie-video
+			{
+				height: 345px;
+			}
+		}
+	}
+}
+
+@media (min-width: 577px) and (max-width: 992px){
+	.fiche
+	{
+		.galerie
+		{
+			.galerie-img
+			{
+				padding-top: 30px;
+			}
+		}
+	}
+}
+
+
+@media (min-width: 0px) and (max-width: 576px){
+	footer
+	{
+		.container
+		{
+			padding-top: 50px;
+			padding-bottom: 50px;
+			
+			.block
+			{
+				padding-bottom: 30px;
+			}			
+		}
+
+
+	}
+
+	.fiche
+	{
+		.container.fiche-head
+		{
+			.avatar
+			{
+				img
+				{
+				}
+			}
+		}
+
+		.fiche-infos
+		{
+			padding-top: 50px;
+			padding-bottom: 50px;
+
+			.container
+			{
+				.fiche-infos-prestations
+				{
+					.liste-prestations
+					{
+					}
+				}
+
+				.fiche-infos-complementaire
+				{
+					padding-top: 10px;
+				}				
+			}
+		}
+
+		.fiche-qui-je-suis
+		{
+			padding-top: 50px;
+			padding-bottom: 50px;
+
+			.container
+			{
+				.descr
+				{
+					padding-top:30px;
+				}
+			}
+		}
+
+		.galerie
+		{
+			.container
+			{
+				padding-top: 50px;
+				padding-bottom: 50px;
+			}
+
+			.galerie-video
+			{
+				height: 212px;
+			}
+
+			.galerie-img
+			{
+				padding-top: 30px;
+			}
+		}
+	}
+}
