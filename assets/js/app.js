@@ -8,9 +8,9 @@ var appMobileMenu = new Vue({
 			id: 0,
 			listResultat : []
 		},		
-		show: true,
+		show: false,
 		target: {
-			menu: true,
+			menu: false,
 			search: false
 		}
 	},
